@@ -29,7 +29,7 @@ by Michael Sanders
 
 ### What is AutoPy?
 
-AutoPy is a simple, cross-platform GUI automation toolkit for Python. It includes functions for controlling the keyboard and mouse, finding colors and bitmaps on-screen, and displaying alerts -- all in a cross-platform, efficient, and simple manner.
+AutoPy is a simple, cross-platform GUI automation toolkit for Python. It includes functions for controlling the keyboard and mouse, finding on-screen colors and bitmaps, and displaying alerts -- all in a cross-platform, efficient, and simple manner.
 
 <div id="how-so"></div>
 
@@ -82,13 +82,13 @@ Another option is to compile from the latest source on the GitHub repository:
 	$ python setup.py build
 	# python setup.py install
 
-When building from source, make sure to `cd` out of the autopy directory before attempting to use AutoPy or else it may fail on an `ImportError` due to Python's relative imports.
+When building from source, make sure to `cd` out of the autopy directory before attempting to use AutoPy. The build will otherwise fail on an `ImportError` due to Python's relative imports.
 
 <div id="autopy-helloworld"></div>
 
 ### Hello World
 
-The following is the full source for a "hello world" script in autopy. Running this code will cause an alert dialog to appear on every major platform:
+The following is the full source for a "hello world" script using autopy. Running this code will cause an alert dialog to appear on every major platform:
 
 	import autopy
 	def hello_there_world():
@@ -105,7 +105,7 @@ The following is the full source for a "hello world" script in autopy. Running t
 
 ### Controlling the Mouse
 
-AutoPy includes a number of functions for controlling the mouse. For a full list, consult the [API Reference](http://www.autopy.org/documentation/api-reference/mouse.html). This short tutorial, however, only gives you a taste of two: `autopy.mouse.move()` and `autopy.mouse.smooth_move()`. These functions do exactly what they seem; for instance, to immediately "teleport" the mouse to the top left corner of the screen:
+AutoPy includes a number of functions for controlling the mouse. For a full list, consult the [API Reference](http://www.autopy.org/documentation/api-reference/mouse.html). The following short tutorial gives you a taste of two: `autopy.mouse.move()` and `autopy.mouse.smooth_move()`. These functions do exactly what they seem; for instance, to immediately "teleport" the mouse to the top left corner of the screen:
 
 	>>> import autopy
 	>>> autopy.mouse.move(1, 1)
@@ -185,7 +185,7 @@ To save the screen capture to a file, we can use:
 
 The filetype is either parsed automatically from the filename, or given as an optional parameter. AutoPy currently only supports the BMP and PNG filetypes, though, as those are really all that are practical for its purpose.
 
-Loading a bitmap is done essentially the same way, only from a class method:
+Loading a bitmap is done the same way, only from a class method:
 
 	>>> import autopy
 	>>> autopy.bitmap.Bitmap.open('i-am-a-monkey-and-i-like-it.png')
@@ -199,7 +199,7 @@ Sometimes it is desirable to keep a short script free of any outside dependencie
 									      'MwBDGA2QBcMwpt')
 	<Bitmap object at 0x12278>
 
-This is not recommended for large bitmaps (a screenshot, for instance, is obviously _way_ too big), but can be useful for short images used in a script you want to be very easily distributable.
+The above is not recommended for large bitmaps (a screenshot, for instance, is obviously _way_ too big), but can be useful for short images used in a script you want to be very easily distributable.
 
 Aside from analyzing a bitmap's pixel data, the main use for loading a bitmap is finding it on the screen or inside another bitmap. For example, the following prints the coordinates of the first monkey found in a barrel of monkeys (scanned from left to right, top to bottom):
 
